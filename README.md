@@ -1,4 +1,1 @@
-
-
-https://github.com/ayushpai/AI-Math-Notes/assets/43297680/0a2454b9-7e7d-4ade-9c85-4601d7e41626
-
+![AI-Math-Notes](https://github.com/ayushpai/AI-Math-Notes/assets/43297680/41f23333-6035-4793-8e2a-743d2550f5c4)
