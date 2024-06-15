@@ -32,10 +32,10 @@ class DrawingApp:
         self.button_clear = tk.Button(root, text="Clear", command=self.clear)
         self.button_clear.pack(side=tk.LEFT)
 
-        self.button_undo = tk.Button(root, text="Undo", command=self.undo)
+        self.button_undo = tk.Button(root, text="Undo (Cmd/Ctrl Z)", command=self.undo)
         self.button_undo.pack(side=tk.LEFT)
 
-        self.button_calculate = tk.Button(root, text="Calculate", command=self.calculate)
+        self.button_calculate = tk.Button(root, text="Calculate (Return/Enter)", command=self.calculate)
         self.button_calculate.pack(side=tk.LEFT)
 
         self.custom_font = tkFont.Font(family="Noteworthy", size=100)
@@ -111,7 +111,7 @@ class DrawingApp:
 
         answer = response.choices[0].message.content
         self.draw_answer(answer)
-        print(answer)
+        # print(answer)
 
     def command_calculate(self, event):
         self.calculate()
