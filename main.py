@@ -1,8 +1,8 @@
+from io import BytesIO
 import tkinter as tk
-from PIL import Image, ImageDraw, ImageGrab, ImageFont, ImageTk
+from PIL import Image, ImageDraw, ImageFont
 from openai import OpenAI
 from tkinter import font as tkFont
-import pytesseract
 import base64
 
 class DrawingApp:
@@ -85,13 +85,12 @@ class DrawingApp:
                 self.canvas.create_line(coords, fill='white', width=5)
 
     def calculate(self):
-        self.image.save("canvas_image.png")
-
-        def encode_image(image_path):
-            with open(image_path, "rb") as image_file:
-                return base64.b64encode(image_file.read()).decode('utf-8')
+        def encode_image_to_base64(image):
+            buffered = BytesIO()
+            image.save(buffered, format="PNG")
+            return base64.b64encode(buffered.getvalue()).decode('utf-8')
             
-        base64_image = encode_image("canvas_image.png")
+        base64_image = encode_image_to_base64(self.image)
 
         response = self.client.chat.completions.create(
             model="gpt-4o",
