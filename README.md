@@ -10,7 +10,7 @@ AI Math Notes is an interactive drawing application that allows users to draw ma
 
 
 ## Usage
-- Run the application: `python app.py`
+- Run the application: `python main.py`
 ### Application Interface
 
 The app works by placing the answer next to an equation that has not been solved (AKA an equals sign with nothing to the right of it). An equals sign must be the last thing you wrote before clicking calculate.
